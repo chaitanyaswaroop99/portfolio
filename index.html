@@ -1,78 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chaitanya | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chaitanya J S Matsa | Portfolio</title>
+  <meta name="description" content="Computer Science × Photography × Media Arts" />
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
-    header { background: #222; color: #fff; padding: 20px; text-align: center; }
-    nav a { color: #fff; margin: 0 10px; text-decoration: none; }
-    section { padding: 40px; max-width: 1000px; margin: auto; }
-    h1, h2, h3 { color: #333; }
-    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .project { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-    .project img { max-width: 100%; border-radius: 10px; margin-bottom: 15px; }
-    footer { background: #222; color: #fff; text-align: center; padding: 20px; margin-top: 40px; }
+    :root{
+      --bg:#0f1115; --card:#171923; --text:#e6e6e6; --muted:#a9b0c0; --accent:#7dd3fc;
+      --ring: rgba(125,211,252,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{position:sticky;top:0;background:rgba(15,17,21,.85);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid #20222d;z-index:10}
+    .wrap{max-width:1080px;margin:0 auto;padding:18px 20px}
+    .row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{font-weight:700;letter-spacing:.3px}
+    nav a{margin:0 10px;color:#cfd6e6}
+    nav a:hover{color:#fff}
+    main{padding:28px 20px}
+    h1{font-size:2rem;margin:.2rem 0 .6rem}
+    h2{font-size:1.3rem;margin:0 0 10px;color:#d8deee}
+    p.lead{color:var(--muted);max-width:70ch;margin:0}
+    .hero{max-width:1080px;margin:0 auto 28px}
+    .cards{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px;max-width:1080px;margin:0 auto}
+    .card{grid-column:span 12;background:var(--card);border:1px solid #232634;border-radius:16px;padding:18px 18px 8px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    @media (min-width:700px){.card{grid-column:span 12}}
+    .card h3{margin:0 0 6px;font-size:1.1rem}
+    .card p{color:var(--muted);margin:0 0 14px}
+    .gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px;margin:12px 0 6px}
+    .gallery .full{grid-column:span 12}
+    .gallery .half{grid-column:span 12}
+    @media (min-width:760px){
+      .gallery .half{grid-column:span 6}
+    }
+    figure{margin:0}
+    img{width:100%;height:auto;border-radius:12px;border:1px solid #2a2e3c;display:block}
+    figcaption{font-size:.85rem;color:#9aa3b7;margin:6px 2px 4px}
+    .tag{display:inline-block;background:#202538;color:#cfe7ff;border:1px solid #283049;padding:2px 8px;border-radius:999px;font-size:.78rem;margin-right:6px}
+    .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+    .section{max-width:1080px;margin:28px auto}
+    .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px}
+    .col-12{grid-column:span 12}
+    footer{border-top:1px solid #20222d;margin-top:40px}
+    .contact a{word-break:break-all}
+    /* nice focus */
+    a:focus, button:focus, .card:focus-within{outline:2px solid var(--ring);outline-offset:2px}
   </style>
 </head>
 <body>
   <header>
-    <h1>Chaitanya Jyothi Swaroop Matsa</h1>
-    <p>Computer Science × Photography × Media Arts</p>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="#photography">Photography</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="wrap row">
+      <div class="brand">Chaitanya Jyothi Swaroop Matsa</div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#photography">Photography</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section id="projects">
-    <h2>Featured Projects</h2>
-    <div class="projects">
-      
-      <div class="project">
-        <h3>AI Portraits – Human & Machine Collaboration</h3>
-        <img src="https://dummyimage.com/600x400/cccccc/000000&text=Original+Portrait" alt="Original Portrait">
-        <img src="https://dummyimage.com/600x400/999999/ffffff&text=GAN+Output" alt="GAN Output">
-        <img src="https://dummyimage.com/600x400/cc9999/000000&text=Stable+Diffusion+Output" alt="Stable Diffusion Output">
-        <p>A series exploring how GANs and Stable Diffusion reinterpret human portraiture. Original photographs are transformed into surreal and artistic variations.</p>
+  <main>
+    <section class="hero">
+      <h1>Computer Science × Photography × Media Arts</h1>
+      <p class="lead">I build creative technology projects at the intersection of AI, interactive media, and lens-based art. Below are featured works and experiments prepared for my Media Arts PhD portfolio.</p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2>Featured Projects</h2>
+      <div class="cards">
+
+        <!-- Moonrise – AI Photo Experiment -->
+        <article class="card" aria-labelledby="moonrise-title">
+          <h3 id="moonrise-title">Moonrise – AI Photo Experiment</h3>
+          <p>This series explores how different styles (cinematic, noir, and duotone) transform the atmosphere of the same image. Workflow: original capture → creative processing in Python (Pillow/Numpy) → curated presentation.</p>
+
+          <div class="gallery">
+            <figure class="full">
+              <img src="moon.jpg" alt="Original Moonrise photograph" />
+              <figcaption>Original photo</figcaption>
+            </figure>
+
+            <figure class="half">
+              <img src="cinematic_teal_orange.jpg" alt="Cinematic teal–orange graded version of the moon photo" />
+              <figcaption>Cinematic teal–orange</figcaption>
+            </figure>
+
+            <figure class="half">
+              <img src="noir_high_contrast.jpg" alt="Noir high-contrast black and white version of the moon photo" />
+              <figcaption>Noir high-contrast</figcaption>
+            </figure>
+
+            <figure class="full">
+              <img src="warm_dusk_duotone.jpg" alt="Warm dusk duotone version of the moon photo" />
+              <figcaption>Warm dusk duotone</figcaption>
+            </figure>
+          </div>
+
+          <div class="stack" aria-label="tools">
+            <span class="tag">Python</span>
+            <span class="tag">Pillow</span>
+            <span class="tag">Numpy</span>
+            <span class="tag">Image Processing</span>
+          </div>
+        </article>
+
+        <!-- Placeholder project cards you can fill later -->
+        <article class="card">
+          <h3>Dream City – AI-Generated Urban Futures</h3>
+          <p>NYC cityscapes reimagined with prompt-guided diffusion. A study of how generative models recontextualize place and memory.</p>
+          <div class="gallery">
+            <figure class="half"><img src="assets/dreamcity-1.jpg" alt="Dream City sample 1" /></figure>
+            <figure class="half"><img src="assets/dreamcity-2.jpg" alt="Dream City sample 2" /></figure>
+          </div>
+          <div class="stack"><span class="tag">Stable Diffusion</span><span class="tag">Prompt Design</span><span class="tag">Curation</span></div>
+        </article>
+
+        <article class="card">
+          <h3>Financial Landscapes – Data as Art</h3>
+          <p>Turns market time-series into 3D terrains. Visual poetics from price movement and volatility.</p>
+          <div class="gallery">
+            <figure class="half"><img src="assets/finland-1.jpg" alt="Financial landscape sample 1" /></figure>
+            <figure class="half"><img src="assets/finland-2.jpg" alt="Financial landscape sample 2" /></figure>
+          </div>
+          <div class="stack"><span class="tag">Python</span><span class="tag">Plotly/Three.js</span><span class="tag">Data Art</span></div>
+        </article>
+
       </div>
+    </section>
 
-      <div class="project">
-        <h3>Dream City – AI-Generated Urban Futures</h3>
-        <img src="https://dummyimage.com/600x400/444/fff&text=Dream+City+AI+Output" alt="Dream City AI Output">
-        <p>City photography reimagined using AI models, transforming urban skylines into futuristic and dreamlike environments.</p>
+    <!-- PHOTOGRAPHY -->
+    <section id="photography" class="section">
+      <h2>Photography</h2>
+      <div class="grid">
+        <div class="col-12 card">
+          <p>Selected portraits, street, and experimental work. Replace these placeholders with your best shots.</p>
+          <div class="gallery">
+            <figure class="half"><img src="assets/photo-1.jpg" alt="Photography sample 1" /></figure>
+            <figure class="half"><img src="assets/photo-2.jpg" alt="Photography sample 2" /></figure>
+            <figure class="half"><img src="assets/photo-3.jpg" alt="Photography sample 3" /></figure>
+            <figure class="half"><img src="assets/photo-4.jpg" alt="Photography sample 4" /></figure>
+          </div>
+        </div>
       </div>
-    <div class="project">
-      <h3>Moonrise – Urban Evening</h3>
-      <img src="moon.jpg" alt="Moonrise photo">
-      <p>A twilight photo capturing the crescent moon above the city skyline. 
-     This image is part of my Media Arts portfolio, exploring how natural light 
-     and urban environments intersect.</p>
-    </div>
+    </section>
 
-    
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2>About</h2>
+      <div class="grid">
+        <div class="col-12 card">
+          <p>I’m Chaitanya, blending a CS background with photography and interactive media. I’m preparing a Media Arts PhD portfolio focused on AI-assisted image-making, computational photography, and data-driven visual storytelling.</p>
+        </div>
+      </div>
+    </section>
 
-    </div>
-  </section>
-
-  <section id="photography">
-    <h2>Photography Showcase</h2>
-    <p>A collection of my favorite portraits, street photography, and experimental works.</p>
-    <img src="https://dummyimage.com/600x400/888/fff&text=Photography+Sample+1" alt="Photography 1">
-    <img src="https://dummyimage.com/600x400/aaa/000&text=Photography+Sample+2" alt="Photography 2">
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: yourname@email.com</p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-  </section>
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="grid">
+        <div class="col-12 card contact">
+          <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+          <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">linkedin.com/in/yourprofile</a></p>
+          <p>Resume (PDF): <a href="assets/Chaitanya_Resume.pdf" target="_blank" rel="noopener">Download</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Chaitanya Jyothi Swaroop Matsa</p>
+    <div class="wrap">
+      <small>© 2025 Chaitanya Jyothi Swaroop Matsa</small>
+    </div>
   </footer>
 </body>
 </html>
-
